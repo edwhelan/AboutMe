@@ -1,0 +1,89 @@
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/Users/edwhelan/Documents/baseSite/index.css">
+    <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">   
+    <title>ed.whe</title>
+</head>
+<body>
+    <div>
+        <div class="hero-image">
+            <div class="hero-text">
+                <h1>Ed.Whe</h1>
+                <p>Edward Whelan</p>
+                <button id="buttClick" type="button"><a href="https://www.github.com/edwhelan">Github</a></button>
+            </div>
+        </div>
+        
+        <div>
+                <ul id="tabs">
+                        <li><a href="#" name="tab1">me</a></li>
+                        <li><a href="#" name="tab2">goals</a></li>
+                        <li><a href="#" name="tab3">hobbies</a></li>
+                        <li><a href="#" name="tab4">misc</a></li>    
+                    </ul>
+                    
+                    <div id="content">
+                        <!-- info about me   -->
+                        <div id="tab1">
+                            <p>Edward Whelan <br>
+                            Former IT pro and Comic Book shop manager. <br>
+                            Lifelong computer enthusiast. <br>
+                            Passion for learning and sharing knowledge. 
+                            </p> 
+                        </div>
+                        <!-- goals -->
+                        <div id="tab2">
+                            Non traditional work week. <br>
+                            Cultivate network of knowledge. <br>
+                            Work in a place that values my time as much as I do. <br>
+                            Consume donuts. <br>
+                            Learn to sail. <br>
+                            Hike as much as I can.
+                        </div>
+                        <!-- hobbies -->
+                        <div id="tab3">
+                            Baseball. <br>
+                            Coding. <br>
+                            Coffee.<br>
+                            Cats.<br>
+                            Hiking.<br>
+                            Camping.
+                        </div>
+                        <!-- misc -->
+                        <div id="tab4">
+                            <p>My Cat Alice</p> <br>
+                            <img id="catPic" src="/Users/edwhelan/Documents/baseSite/alice.jpg" alt="picture of alice">
+
+                        </div>
+                    </div>
+        </div>
+
+    </div>
+    
+</body>
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script>
+$(document).ready(function() {
+    $("#content").find("[id^='tab']").hide(); // Hide all content
+    $("#tabs li:first").attr("id","current"); // Activate the first tab
+    $("#content #tab1").fadeIn(); // Show first tab's content
+    
+    $('#tabs a').click(function(e) {
+        e.preventDefault();
+        if ($(this).closest("li").attr("id") == "current"){ //detection for current tab
+         return;       
+        }
+        else{             
+          $("#content").find("[id^='tab']").hide(); // Hide all content
+          $("#tabs li").attr("id",""); //Reset id's
+          $(this).parent().attr("id","current"); // Activate this
+          $('#' + $(this).attr('name')).fadeIn(); // Show content for the current tab
+        }
+    });
+});
+</script>
+</html>
