@@ -5,7 +5,7 @@ body, html {
 body{
     font-family: 'Slabo 27px', serif;
     /* The background image */
-    background-image: url('file:///Users/edwhelan/Documents/baseSite/swirl_pattern.png');
+    background-image: url('swirl_pattern.png');
     /* Set background image to fixed (don't scroll along with the page) */
     background-attachment: fixed;
     /* Center the background image */
